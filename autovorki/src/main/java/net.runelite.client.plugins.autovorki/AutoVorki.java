@@ -450,6 +450,10 @@ public class AutoVorki extends Plugin {
                     --timeout;
                     break;
                 case FIND_BANK:
+                    WidgetItem ruby = inv.getWidgetItem(rubyBolts);
+                    if (ruby != null) {
+                        actionItem(ruby.getId(), MenuAction.ITEM_SECOND_OPTION, 0);
+                    }
                     openBank();
                     timeout = 2;
                     break;
@@ -468,11 +472,7 @@ public class AutoVorki extends Plugin {
                     timeout = 2;
                     deposited = false;
                     break;
-                case DEPOSIT_INVENTORY:
-                    WidgetItem ruby = inv.getWidgetItem(rubyBolts);
-                    if (ruby != null) {
-                        actionItem(ruby.getId(), MenuAction.ITEM_SECOND_OPTION, 0);
-                    }
+                case DEPOSIT_INVENTORY:                    
                     bank.depositAll();
                     deposited = true;
                     timeout = 3;
