@@ -474,6 +474,10 @@ public class AutoVorki extends Plugin {
                     timeout = 3;
                     break;
                 case TELE_TO_POH:
+                    WidgetItem ruby = inv.getWidgetItem(rubyBolts);
+                    if (ruby != null) {
+                        actionItem(ruby.getId(), MenuAction.ITEM_SECOND_OPTION, 0);
+                    }
                     teleToPoH();
                     break;
                 case WITHDRAW_MAGIC_STAFF:
