@@ -469,6 +469,10 @@ public class AutoVorki extends Plugin {
                     deposited = false;
                     break;
                 case DEPOSIT_INVENTORY:
+                    WidgetItem ruby = inv.getWidgetItem(rubyBolts);
+                    if (ruby != null) {
+                        actionItem(ruby.getId(), MenuAction.ITEM_SECOND_OPTION, 0);
+                    }
                     bank.depositAll();
                     deposited = true;
                     timeout = 3;
